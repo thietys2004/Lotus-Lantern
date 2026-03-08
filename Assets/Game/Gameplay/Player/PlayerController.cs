@@ -9,12 +9,22 @@ namespace Game.Gameplay.Player
         public float moveSpeed = 5f;
         public float gridSize = 1f;
 
+        private Rigidbody2D rb;
+        private Animator playeranimator;
+
         [Header("Respawn Settings")]
         public Vector3 respawnPosition;
 
         private bool isMoving = false;
         private bool isRespawning = false;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+            playeranimator = GetComponent<Animator>();
+        }
+
         void Start()
         {
             respawnPosition = transform.position;
@@ -22,6 +32,12 @@ namespace Game.Gameplay.Player
 
         // Update is called once per frame
         void Update()
+        {
+            HandleInput();
+            UpdateAnimator();
+
+        }
+        private void HandleInput()
         {
             if (!isMoving && !isRespawning)
             {
@@ -35,11 +51,17 @@ namespace Game.Gameplay.Player
 
                 if (horizontal != 0 || vertical != 0)
                 {
+                    if (horizontal != 0)
+                    {
+                        Vector3 scale = transform.localScale;
+                        scale.x = horizontal;
+                        transform.localScale = scale;
+                    }
+
                     Vector3 targetPos = transform.position + new Vector3(horizontal, vertical, 0f) * gridSize;
                     StartCoroutine(MoveToGrid(targetPos));
                 }
             }
-
         }
         private IEnumerator MoveToGrid(Vector3 targetPos)
         {
@@ -58,6 +80,12 @@ namespace Game.Gameplay.Player
         public void Die()
         {
             if (isRespawning) return;
+
+
+            if (Game.Core.SoulFireManager.Instance != null)
+            {
+                Game.Core.SoulFireManager.Instance.ClearAllLamps();
+            }
             StopAllCoroutines();
             isMoving = false;
 
@@ -87,6 +115,12 @@ namespace Game.Gameplay.Player
         public void SetRespawnPoint(Vector3 newPoint)
         {
             respawnPosition = new Vector3(newPoint.x, newPoint.y, 0f);
+        }
+
+        private void UpdateAnimator()
+        {
+
+            playeranimator.SetBool("isWalking", isMoving);
         }
     }
 }

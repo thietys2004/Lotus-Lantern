@@ -30,6 +30,7 @@ namespace Game.Gameplay.Environment
                 if (player != null)
                 {
                     ActivateCheckpoint(player);
+                    Debug.Log("Đã kích hoạt điểm hồi sinh tại Đá Altar!");
                 }
             }
         }
