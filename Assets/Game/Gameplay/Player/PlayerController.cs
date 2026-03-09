@@ -9,6 +9,7 @@ namespace Game.Gameplay.Player
         public float moveSpeed = 5f;
         public float gridSize = 1f;
 
+        private SpriteRenderer sr;
         private Rigidbody2D rb;
         private Animator playeranimator;
 
@@ -17,10 +18,15 @@ namespace Game.Gameplay.Player
 
         private bool isMoving = false;
         private bool isRespawning = false;
+
+
+        private float lastX = 0f;
+        private float lastY = -1f;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         private void Awake()
         {
+            sr = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
             playeranimator = GetComponent<Animator>();
         }
@@ -41,24 +47,27 @@ namespace Game.Gameplay.Player
         {
             if (!isMoving && !isRespawning)
             {
-                float horizontal = Input.GetAxisRaw("Horizontal");
-                float vertical = Input.GetAxisRaw("Vertical");
+                float inputX = Input.GetAxisRaw("Horizontal");
+                float inputY = Input.GetAxisRaw("Vertical");
 
-                if (horizontal != 0)
+                if (inputX != 0)
                 {
-                    vertical = 0;
+                    inputY = 0;
                 }
 
-                if (horizontal != 0 || vertical != 0)
+                if (inputX != 0 || inputY != 0)
                 {
-                    if (horizontal != 0)
-                    {
-                        Vector3 scale = transform.localScale;
-                        scale.x = horizontal;
-                        transform.localScale = scale;
-                    }
 
-                    Vector3 targetPos = transform.position + new Vector3(horizontal, vertical, 0f) * gridSize;
+                    lastX = inputX;
+                    lastY = inputY;
+
+
+                    if (inputX > 0)
+                        sr.flipX = false;
+                    else if (inputX < 0)
+                        sr.flipX = true;
+
+                    Vector3 targetPos = transform.position + new Vector3(inputX, inputY, 0f) * gridSize;
                     StartCoroutine(MoveToGrid(targetPos));
                 }
             }
@@ -120,7 +129,10 @@ namespace Game.Gameplay.Player
         private void UpdateAnimator()
         {
 
-            playeranimator.SetBool("isWalking", isMoving);
+
+            playeranimator.SetFloat("moveX", Mathf.Abs(lastX));
+            playeranimator.SetFloat("moveY", lastY);
+            playeranimator.SetBool("IsMoving", isMoving);
         }
     }
 }
