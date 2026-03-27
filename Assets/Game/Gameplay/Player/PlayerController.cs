@@ -16,12 +16,20 @@ namespace Game.Gameplay.Player
         [Header("Respawn Settings")]
         public Vector3 respawnPosition;
 
+        [Header("Lantern Settings")]
+        public GameObject lotusPrefab;
+        private GameObject currentLotus;
+        private bool isInteracting = false;
+
         private bool isMoving = false;
         private bool isRespawning = false;
 
 
         private float lastX = 0f;
         private float lastY = -1f;
+
+        [Header("Tương tác Môi trường")]
+        private Game.Gameplay.Environment.LanternInteractable nearbyLantern = null;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         private void Awake()
@@ -42,10 +50,20 @@ namespace Game.Gameplay.Player
             HandleInput();
             UpdateAnimator();
 
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnPlaceLanternButtonPressed();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnInteractEnvironmentButtonPressed();
+            }
+
         }
         private void HandleInput()
         {
-            if (!isMoving && !isRespawning)
+            if (!isMoving && !isRespawning && !isInteracting)
             {
                 float inputX = Input.GetAxisRaw("Horizontal");
                 float inputY = Input.GetAxisRaw("Vertical");
@@ -133,6 +151,78 @@ namespace Game.Gameplay.Player
             playeranimator.SetFloat("moveX", Mathf.Abs(lastX));
             playeranimator.SetFloat("moveY", lastY);
             playeranimator.SetBool("IsMoving", isMoving);
+        }
+
+        public void OnPlaceLanternButtonPressed()
+        {
+
+            if (!isMoving && !isRespawning && !isInteracting)
+            {
+                StartCoroutine(SpawnLotusRoutine());
+            }
+        }
+        private IEnumerator SpawnLotusRoutine()
+        {
+            isInteracting = true;
+
+
+
+            playeranimator.SetBool("IsInteracting", true);
+
+
+            yield return new WaitForSeconds(0.2f);
+
+
+            if (currentLotus != null)
+            {
+                Destroy(currentLotus);
+            }
+
+
+            Vector3 feetPos = transform.position + new Vector3(0f, -0.5f, 0f);
+            currentLotus = Instantiate(lotusPrefab, feetPos, Quaternion.identity);
+
+
+            Game.Gameplay.Skill.LotusLantern lantern = currentLotus.GetComponent<Game.Gameplay.Skill.LotusLantern>();
+            if (lantern != null)
+            {
+
+                lantern.ActivateLantern(new Vector2(lastX, lastY));
+            }
+
+
+            yield return new WaitForSeconds(0.3f);
+
+
+            playeranimator.SetBool("IsInteracting", false);
+            isInteracting = false;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("InteractableLantern"))
+            {
+                nearbyLantern = collision.GetComponent<Game.Gameplay.Environment.LanternInteractable>();
+
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("InteractableLantern"))
+            {
+                nearbyLantern = null;
+
+            }
+        }
+        public void OnInteractEnvironmentButtonPressed()
+        {
+
+            if (!isMoving && !isRespawning && !isInteracting && nearbyLantern != null)
+            {
+
+                nearbyLantern.ToggleLantern();
+
+            }
         }
     }
 }

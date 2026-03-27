@@ -1,0 +1,1007 @@
+fileFormatVersion: 2
+guid: 248a283e669b7274782b4d6bb93a2dc1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2608059739296445335
+    second: Lantern 1 - Red Roof and Orange_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ccc363c7f4ecbd0800000000000000
+      internalID: -2608059739296445335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f131790b82ce924f8c491b8c071c933
+      internalID: 884868796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ca5ccd22089e40b3c65c64faef015
+      internalID: 1475351820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3eb9783b3170c4985a7fc553b9a2b7
+      internalID: 1429612176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0abcd6660acf040b4ac4b479ba9aad
+      internalID: -1150050604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc668b073364ee4ea468493cbd284d3
+      internalID: 296874752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 280
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7259580665bc4b469e2a6bbe2086d46
+      internalID: 216832089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fd3f60929858d4ba1a7077d12278b8
+      internalID: -202545440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795a9f3ffabdda94b9e10a1e656c0cbe
+      internalID: -1028250443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98bf16c82352c34ea47e84db3ef3f38
+      internalID: 33972780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_10
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0091da3ae9f5c284ba079e962a8edfdc
+      internalID: -181256213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a1b12c3e781c14eb363daccab65017
+      internalID: -1778083396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56064c21b356a24ebfc9da2e95cb7d1
+      internalID: 1484343483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4dc3b3feb25504e849a4552857956f
+      internalID: 148063400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ed5ff134e7c0c41b36bd00f43b4277
+      internalID: 1314492127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa0426036d6b8c46bea8fa797b44e85
+      internalID: -197299138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f987ccc56fec0004596d53846818fff2
+      internalID: -1228287198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dec4a678a852074583e6b67736c1118
+      internalID: -1443120361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f031ecde35aa0e440b8b8ff3b1b8359e
+      internalID: -1647094789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3f169c08dbeb34fa13202b2a989f43
+      internalID: 1182688420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_20
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 168
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c334053a6ba2f4e8c0ff922b796ce0
+      internalID: 914089591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bebb1c0658ec4d41afc02725961ae0e
+      internalID: -1126858304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_22
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6363d4815f9ff834c95d6bbb96c59c63
+      internalID: 286769246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68eb634d17af00a4b8cf67393f5a3c4a
+      internalID: -27628117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47dc5a2cb509124f8782f9ec67c01f3
+      internalID: 1633415503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aac1ae5f7b33bb4db0b66b36ff9b946
+      internalID: 631361283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a71c05d8bcece438fc0e9cfdffb185
+      internalID: 868586683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3c9045cd623444bad0b42e0e7d5700
+      internalID: 1889593535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844401838b2897048b1b8c9729497ccd
+      internalID: -1357852198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_29
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3709ad4f1ba60414faca08926952f091
+      internalID: 456336411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_30
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571175f746b18844bb31ad83defddc7f
+      internalID: 281170127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_31
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b27979afc14da49b9a64a0ab60a47d
+      internalID: 1131916588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9dcf984aff83b459bd0eb3d09ea040
+      internalID: -1558502180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f4d6c71f7a8e742bcac0d2733eef13
+      internalID: 1955796545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 56
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62821887f9ce574e8fd89a5dda11d7f
+      internalID: 1820262293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6e383449399a04eb08402d32495bb5
+      internalID: -2045724899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_36
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aea2ab78c129204b870eab745b219a0
+      internalID: -1314739758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 1 - Red Roof and Orange_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d44180b3ebdc441b9453ee2f14dcd1
+      internalID: -168299216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 261c1ebca9c60dc46ae8e215af1c3581
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Lantern 1 - Red Roof and Orange_0: -2608059739296445335
+      Lantern 1 - Red Roof and Orange_1: 884868796
+      Lantern 1 - Red Roof and Orange_10: -181256213
+      Lantern 1 - Red Roof and Orange_11: -1778083396
+      Lantern 1 - Red Roof and Orange_12: 1484343483
+      Lantern 1 - Red Roof and Orange_13: 148063400
+      Lantern 1 - Red Roof and Orange_14: 1314492127
+      Lantern 1 - Red Roof and Orange_15: -197299138
+      Lantern 1 - Red Roof and Orange_16: -1228287198
+      Lantern 1 - Red Roof and Orange_17: -1443120361
+      Lantern 1 - Red Roof and Orange_18: -1647094789
+      Lantern 1 - Red Roof and Orange_19: 1182688420
+      Lantern 1 - Red Roof and Orange_2: 1475351820
+      Lantern 1 - Red Roof and Orange_20: 914089591
+      Lantern 1 - Red Roof and Orange_21: -1126858304
+      Lantern 1 - Red Roof and Orange_22: 286769246
+      Lantern 1 - Red Roof and Orange_23: -27628117
+      Lantern 1 - Red Roof and Orange_24: 1633415503
+      Lantern 1 - Red Roof and Orange_25: 631361283
+      Lantern 1 - Red Roof and Orange_26: 868586683
+      Lantern 1 - Red Roof and Orange_27: 1889593535
+      Lantern 1 - Red Roof and Orange_28: -1357852198
+      Lantern 1 - Red Roof and Orange_29: 456336411
+      Lantern 1 - Red Roof and Orange_3: 1429612176
+      Lantern 1 - Red Roof and Orange_30: 281170127
+      Lantern 1 - Red Roof and Orange_31: 1131916588
+      Lantern 1 - Red Roof and Orange_32: -1558502180
+      Lantern 1 - Red Roof and Orange_33: 1955796545
+      Lantern 1 - Red Roof and Orange_34: 1820262293
+      Lantern 1 - Red Roof and Orange_35: -2045724899
+      Lantern 1 - Red Roof and Orange_36: -1314739758
+      Lantern 1 - Red Roof and Orange_37: -168299216
+      Lantern 1 - Red Roof and Orange_4: -1150050604
+      Lantern 1 - Red Roof and Orange_5: 296874752
+      Lantern 1 - Red Roof and Orange_6: 216832089
+      Lantern 1 - Red Roof and Orange_7: -202545440
+      Lantern 1 - Red Roof and Orange_8: -1028250443
+      Lantern 1 - Red Roof and Orange_9: 33972780
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

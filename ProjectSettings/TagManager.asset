@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - InteractableLantern
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -40,6 +41,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3905288079
+    locked: 0
+  - name: Miasma
+    uniqueID: 2307496965
+    locked: 0
+  - name: lantern
+    uniqueID: 1524898119
     locked: 0
   - name: Player
     uniqueID: 3637742345
