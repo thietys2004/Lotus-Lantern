@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7aab46884d4d67f4386d15b933a22b24
+guid: e5f98729b71f3274eb8a2f5c4aad0d87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4447218934049883452
-    second: flint-and-steel_0
-  - first:
-      213: 2415874567784376555
-    second: flint-and-steel_1
+      213: -6778479752667450104
+    second: 20250420manaSoulHeaderA-Sheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flint-and-steel_0
+      name: 20250420manaSoulHeaderA-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c354f62ee02b7bd30800000000000000
-      internalID: 4447218934049883452
+      spriteID: 805341134900ee1a0800000000000000
+      internalID: -6778479752667450104
       vertices: []
       indices: 
       edges: []
@@ -141,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: baf97e5a960a7c3449b02ef60c9531af
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -151,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      flint-and-steel_0: 4447218934049883452
+      20250420manaSoulHeaderA-Sheet_0: -6778479752667450104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

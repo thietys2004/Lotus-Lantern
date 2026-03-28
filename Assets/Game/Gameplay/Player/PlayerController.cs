@@ -179,8 +179,13 @@ namespace Game.Gameplay.Player
             }
 
 
-            Vector3 feetPos = transform.position + new Vector3(0f, -0.5f, 0f);
-            currentLotus = Instantiate(lotusPrefab, feetPos, Quaternion.identity);
+            Vector3 rawFeetPos = transform.position + new Vector3(0f, -0.5f, 0f);
+            float snapX = Mathf.Floor(rawFeetPos.x) + 0.5f;
+            float snapY = Mathf.Floor(rawFeetPos.y) + 0.5f;
+            Vector3 snappedPos = new Vector3(snapX, snapY, 0f);
+            currentLotus = Instantiate(lotusPrefab, snappedPos, Quaternion.identity);
+
+
 
 
             Game.Gameplay.Skill.LotusLantern lantern = currentLotus.GetComponent<Game.Gameplay.Skill.LotusLantern>();

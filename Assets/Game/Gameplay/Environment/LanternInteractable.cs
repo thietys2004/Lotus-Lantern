@@ -49,7 +49,6 @@ namespace Game.Gameplay.Environment
         }
         private void TurnOn()
         {
-
             for (int x = -1; x <= 1; x++)
             {
                 for (int y = -1; y <= 1; y++)
@@ -57,10 +56,31 @@ namespace Game.Gameplay.Environment
 
                     if (x == 0 && y == 0) continue;
 
-                    Vector3 spawnPos = transform.position + new Vector3(x, y, 0f) * gridSize;
 
-                    GameObject tile = Instantiate(safePathPrefab, spawnPos, Quaternion.identity);
-                    spawnedTiles.Add(tile);
+                    Vector3 rawPos = transform.position + new Vector3(x, y, 0f) * gridSize;
+                    float snapX = Mathf.Floor(rawPos.x) + 0.5f;
+                    float snapY = Mathf.Floor(rawPos.y) + 0.5f;
+                    Vector3 snappedPos = new Vector3(snapX, snapY, 0f);
+
+                    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(snappedPos, 0.1f);
+                    bool isAlreadyLit = false;
+
+                    foreach (Collider2D col in hitColliders)
+                    {
+
+                        if (col.CompareTag("SafePath"))
+                        {
+                            isAlreadyLit = true;
+                            break;
+                        }
+                    }
+
+
+                    if (!isAlreadyLit)
+                    {
+                        GameObject tile = Instantiate(safePathPrefab, snappedPos, Quaternion.identity);
+                        spawnedTiles.Add(tile);
+                    }
                 }
             }
         }
