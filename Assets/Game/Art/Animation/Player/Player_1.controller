@@ -271,7 +271,7 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: moveX
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
@@ -609,7 +609,7 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -673880250689661979}
-    m_Position: {x: 270, y: 100, z: 0}
+    m_Position: {x: 290, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6091902386303555404}
     m_Position: {x: 305, y: 165, z: 0}

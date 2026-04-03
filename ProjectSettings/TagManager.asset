@@ -6,6 +6,8 @@ TagManager:
   tags:
   - InteractableLantern
   - SafePath
+  - Hazard
+  - Wall
   layers:
   - Default
   - TransparentFX
