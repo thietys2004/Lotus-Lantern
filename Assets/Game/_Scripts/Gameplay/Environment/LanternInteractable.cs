@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 namespace Game.Gameplay.Environment
 {
     public class LanternInteractable : MonoBehaviour
     {
 
-        [Header("Cài đặt Đèn")]
+
         public bool isOn = false;
         public float gridSize = 1f;
 
-        [Header("Prefab & Tham chiếu")]
+
         public GameObject safePathPrefab;
         private Animator anim;
 
@@ -32,11 +33,18 @@ namespace Game.Gameplay.Environment
         {
 
         }
-        public void ToggleLantern()
+
+
+        public void ToggleLightOnly()
         {
             isOn = !isOn;
-
             if (anim != null) anim.SetBool("IsOn", isOn);
+        }
+
+        public IEnumerator SafePathRoutine()
+        {
+
+            yield return new WaitForSeconds(0.5f);
 
             if (isOn)
             {
@@ -44,10 +52,6 @@ namespace Game.Gameplay.Environment
                 if (Game.Core.SoulFireManager.Instance != null)
                 {
                     Game.Core.SoulFireManager.Instance.AddLitLamp(this.gameObject);
-                }
-                else
-                {
-                    Debug.LogError("🚨 Lỗi: Không tìm thấy SoulFireManager trên Scene!");
                 }
             }
             else

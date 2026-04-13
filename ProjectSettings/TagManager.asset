@@ -8,6 +8,8 @@ TagManager:
   - SafePath
   - Hazard
   - Wall
+  - LotusItem
+  - LighterItem
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,8 @@ namespace Game.UI
         public Image lanternImageUI;
         public Sprite[] lanternSprites;
         public TextMeshProUGUI txtMaxFire;
+        public TextMeshProUGUI txtLotusCount;
+        public TextMeshProUGUI txtLightCount;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         private void Awake()
@@ -72,6 +74,21 @@ namespace Game.UI
             if (txtMaxFire != null)
             {
                 txtMaxFire.text = currentLamps + "/" + maxLamps;
+            }
+
+        }
+        public void UpdateLotusCount(int currentCount)
+        {
+            if (txtLotusCount != null)
+            {
+                txtLotusCount.text = currentCount.ToString();
+            }
+        }
+        public void UpdateLightCount(int currentCount)
+        {
+            if (txtLightCount != null)
+            {
+                txtLightCount.text = currentCount.ToString();
             }
         }
     }

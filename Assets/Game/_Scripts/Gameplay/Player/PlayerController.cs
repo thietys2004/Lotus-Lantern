@@ -21,6 +21,8 @@ namespace Game.Gameplay.Player
         public GameObject lotusPrefab;
         private GameObject currentLotus;
         private bool isInteracting = false;
+        public int lotusCount = 0;
+        public int lighterCount = 0;
 
         private bool isMoving = false;
         private bool isRespawning = false;
@@ -30,8 +32,7 @@ namespace Game.Gameplay.Player
         private float lastX = 0f;
         private float lastY = -1f;
 
-        [Header("Tương tác Môi trường")]
-        private Game.Gameplay.Environment.LanternInteractable nearbyLantern = null;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         private void Awake()
@@ -115,15 +116,20 @@ namespace Game.Gameplay.Player
         }
         private bool IsPathClear(Vector3 targetPos)
         {
-            Collider2D[] hitCollider = Physics2D.OverlapCircleAll(targetPos, 0.4f);
-            foreach (Collider2D col in hitCollider)
+            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(targetPos, new Vector2(0.5f, 0.5f), 0f);
+
+            foreach (Collider2D col in hitColliders)
             {
+
                 if (col.gameObject == this.gameObject) continue;
-                if (!col.isTrigger)
-                {
-                    return false;
-                }
+
+
+                if (col.isTrigger) continue;
+
+                return false;
             }
+
+
             return true;
         }
         public bool IsSafePath()
@@ -142,18 +148,35 @@ namespace Game.Gameplay.Player
         private IEnumerator MoveToGrid(Vector3 targetPos)
         {
             isMoving = true;
+            Vector3 startPos = transform.position;
+            float timeOut = 0f;
 
-            while (Vector3.Distance(transform.position, targetPos) > 0.01f)
+
+            while (Vector3.Distance(transform.position, targetPos) > 0.01f && timeOut < 0.5f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                timeOut += Time.deltaTime;
                 yield return null;
             }
 
-            if (Game.UI.UIManager.Instance != null)
+
+            if (timeOut >= 0.5f)
             {
-                Game.UI.UIManager.Instance.AddStep();
+
+                transform.position = startPos;
+
             }
-            transform.position = targetPos;
+            else
+            {
+
+                transform.position = targetPos;
+
+                if (Game.UI.UIManager.Instance != null)
+                {
+                    Game.UI.UIManager.Instance.AddStep();
+                }
+            }
+
             isMoving = false;
         }
         public void Die()
@@ -208,9 +231,16 @@ namespace Game.Gameplay.Player
         public void OnPlaceLanternButtonPressed()
         {
 
-            if (!isMoving && !isRespawning && !isInteracting)
+            if (lotusCount > 0)
             {
+                lotusCount--;
+                Debug.Log("Đã dùng 1 Hoa Sen. Còn lại: " + lotusCount);
+                Game.UI.UIManager.Instance.UpdateLotusCount(lotusCount);
                 StartCoroutine(SpawnLotusRoutine());
+            }
+            else
+            {
+                Debug.Log("Hết Hoa Sen rồi! Bạn cần đi nhặt thêm.");
             }
         }
         private IEnumerator SpawnLotusRoutine()
@@ -258,35 +288,115 @@ namespace Game.Gameplay.Player
             isInteracting = false;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.CompareTag("InteractableLantern"))
-            {
 
-                nearbyLantern = collision.GetComponent<Game.Gameplay.Environment.LanternInteractable>();
 
-            }
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.CompareTag("InteractableLantern"))
-            {
-                nearbyLantern = null;
-
-            }
-        }
         public void OnInteractEnvironmentButtonPressed()
         {
+            if (isMoving || isRespawning || isInteracting) return;
 
-            if (!isMoving && !isRespawning && !isInteracting && nearbyLantern != null)
+            Vector3 facingDirection = new Vector3(lastX, lastY, 0f);
+            Vector3 targetInteractPos = transform.position + (facingDirection * gridSize);
+
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(targetInteractPos, 0.3f);
+            Game.Gameplay.Environment.LanternInteractable foundLantern = null;
+
+            foreach (Collider2D col in hitColliders)
             {
+
+                if (col.CompareTag("LotusItem"))
+                {
+
+                    StartCoroutine(PickupRoutine(col.gameObject, "Lotus"));
+
+                    return;
+                }
+
+
+                if (col.CompareTag("LighterItem"))
+                {
+
+                    StartCoroutine(PickupRoutine(col.gameObject, "Lighter"));
+
+                    return;
+                }
+
+                if (col.isTrigger) continue;
+
+
+                if (col.CompareTag("InteractableLantern"))
+                {
+                    foundLantern = col.GetComponent<Game.Gameplay.Environment.LanternInteractable>();
+                    break;
+                }
+            }
+
+            if (foundLantern != null && lighterCount > 0)
+            {
+
+                if (Game.UI.UIManager.Instance != null)
+                {
+                    Game.UI.UIManager.Instance.AddStep();
+
+                }
+                StartCoroutine(ToggleLanternRoutine(foundLantern));
+            }
+        }
+
+
+        private IEnumerator ToggleLanternRoutine(Game.Gameplay.Environment.LanternInteractable lantern)
+        {
+
+            isInteracting = true;
+            playeranimator.SetBool("IsInteracting", true);
+
+            yield return new WaitForSeconds(0.25f);
+            if (Game.UI.UIManager.Instance != null) Game.UI.UIManager.Instance.AddStep();
+            lantern.ToggleLightOnly();
+
+
+            yield return new WaitForSeconds(0.3f);
+
+            playeranimator.SetBool("IsInteracting", false);
+            yield return StartCoroutine(lantern.SafePathRoutine());
+            isInteracting = false;
+        }
+
+        private IEnumerator PickupRoutine(GameObject itemToPickup, string itemType)
+        {
+
+            isInteracting = true;
+            playeranimator.SetBool("IsInteracting", true);
+
+
+            yield return new WaitForSeconds(0.2f);
+
+
+            if (itemToPickup != null)
+            {
+                if (itemType == "Lotus")
+                {
+                    lotusCount++;
+                    if (Game.UI.UIManager.Instance != null) Game.UI.UIManager.Instance.UpdateLotusCount(lotusCount);
+
+                }
+                else if (itemType == "Lighter")
+                {
+                    lighterCount++;
+                    if (Game.UI.UIManager.Instance != null) Game.UI.UIManager.Instance.UpdateLightCount(lighterCount);
+                }
                 if (Game.UI.UIManager.Instance != null)
                 {
                     Game.UI.UIManager.Instance.AddStep();
                 }
-                nearbyLantern.ToggleLantern();
-
+                Destroy(itemToPickup);
             }
+
+
+            yield return new WaitForSeconds(0.3f);
+
+
+            playeranimator.SetBool("IsInteracting", false);
+            isInteracting = false;
         }
     }
 }

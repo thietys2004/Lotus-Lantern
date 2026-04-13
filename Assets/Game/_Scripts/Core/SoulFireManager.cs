@@ -80,12 +80,12 @@ namespace Game.Core
                     {
                         if (fixedLantern.isOn)
                         {
-                            fixedLantern.ToggleLantern(); // Chỉ tắt đi, không xóa
+                            fixedLantern.ToggleLightOnly();
                         }
                     }
                     else
                     {
-                        Destroy(lamp); // Đèn tạm thời thì xóa
+                        Destroy(lamp);
                     }
                 }
             }
