@@ -93,11 +93,11 @@ namespace Game.Core
             activeLamps.Clear();
 
 
-            if (Game.UI.UIManager.Instance != null)
-            {
-                Game.UI.UIManager.Instance.UpdateLanternBar(activeLamps.Count, currentMaxLamps);
-                Game.UI.UIManager.Instance.ResetSteps();
-            }
+            //if (Game.UI.UIManager.Instance != null)
+            //{
+            //    Game.UI.UIManager.Instance.UpdateLanternBar(activeLamps.Count, currentMaxLamps);
+            //    Game.UI.UIManager.Instance.ResetSteps();
+            //}
         }
         public void ClearContainer()
         {

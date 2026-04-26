@@ -23,6 +23,7 @@ namespace Game.Gameplay.Player
         private bool isInteracting = false;
         public int lotusCount = 0;
         public int lighterCount = 0;
+        public int keyCount = 0;
 
         private bool isMoving = false;
         private bool isRespawning = false;
@@ -147,7 +148,14 @@ namespace Game.Gameplay.Player
         }
         private IEnumerator MoveToGrid(Vector3 targetPos)
         {
+
             isMoving = true;
+
+            if (Game.Core.AudioManager.Instance != null)
+            {
+                Game.Core.AudioManager.Instance.SetWalkingSound(true);
+            }
+
             Vector3 startPos = transform.position;
             float timeOut = 0f;
 
@@ -178,11 +186,15 @@ namespace Game.Gameplay.Player
             }
 
             isMoving = false;
+            if (Game.Core.AudioManager.Instance != null)
+            {
+                Game.Core.AudioManager.Instance.SetWalkingSound(false);
+            }
         }
         public void Die()
         {
             if (isRespawning) return;
-
+            if (Game.Core.AudioManager.Instance != null) Game.Core.AudioManager.Instance.PlayDeathScream();
 
             if (Game.Core.SoulFireManager.Instance != null)
             {
@@ -191,7 +203,10 @@ namespace Game.Gameplay.Player
             StopAllCoroutines();
             isMoving = false;
 
-            StartCoroutine(RespawnRoutine());
+            if (Game.UI.UIManager.Instance != null)
+            {
+                Game.UI.UIManager.Instance.ShowEndGamePanel(false);
+            }
         }
         private IEnumerator RespawnRoutine()
         {
@@ -234,14 +249,11 @@ namespace Game.Gameplay.Player
             if (lotusCount > 0)
             {
                 lotusCount--;
-                Debug.Log("Đã dùng 1 Hoa Sen. Còn lại: " + lotusCount);
+
                 Game.UI.UIManager.Instance.UpdateLotusCount(lotusCount);
                 StartCoroutine(SpawnLotusRoutine());
             }
-            else
-            {
-                Debug.Log("Hết Hoa Sen rồi! Bạn cần đi nhặt thêm.");
-            }
+
         }
         private IEnumerator SpawnLotusRoutine()
         {
@@ -250,7 +262,7 @@ namespace Game.Gameplay.Player
 
 
             playeranimator.SetBool("IsInteracting", true);
-
+            if (Game.Core.AudioManager.Instance != null) Game.Core.AudioManager.Instance.PlayLotusSound();
 
             yield return new WaitForSeconds(0.2f);
 
@@ -320,6 +332,12 @@ namespace Game.Gameplay.Player
                     return;
                 }
 
+                if (col.CompareTag("KeyItem"))
+                {
+                    StartCoroutine(PickupRoutine(col.gameObject, "Key"));
+                    return;
+                }
+
                 if (col.isTrigger) continue;
 
 
@@ -345,7 +363,7 @@ namespace Game.Gameplay.Player
 
         private IEnumerator ToggleLanternRoutine(Game.Gameplay.Environment.LanternInteractable lantern)
         {
-
+            if (Game.Core.AudioManager.Instance != null) Game.Core.AudioManager.Instance.PlayFireSound();
             isInteracting = true;
             playeranimator.SetBool("IsInteracting", true);
 
@@ -365,6 +383,7 @@ namespace Game.Gameplay.Player
         {
 
             isInteracting = true;
+            if (Game.Core.AudioManager.Instance != null) Game.Core.AudioManager.Instance.PlayPickupSound();
             playeranimator.SetBool("IsInteracting", true);
 
 
@@ -383,6 +402,11 @@ namespace Game.Gameplay.Player
                 {
                     lighterCount++;
                     if (Game.UI.UIManager.Instance != null) Game.UI.UIManager.Instance.UpdateLightCount(lighterCount);
+                }
+                else if (itemType == "Key")
+                {
+                    keyCount++;
+                    if (Game.UI.UIManager.Instance != null) Game.UI.UIManager.Instance.UpdateKeyCount(keyCount);
                 }
                 if (Game.UI.UIManager.Instance != null)
                 {

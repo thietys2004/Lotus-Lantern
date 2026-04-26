@@ -10,6 +10,8 @@ TagManager:
   - Wall
   - LotusItem
   - LighterItem
+  - KeyItem
+  - Table
   layers:
   - Default
   - TransparentFX
