@@ -44,9 +44,9 @@ namespace Game.Core
             AddKeybinding("Move Right", KeyCode.D);
             AddKeybinding("Interact", KeyCode.E);
             AddKeybinding("Drop Flower", KeyCode.Space);
-            AddKeybinding("Jump", KeyCode.Space);
+
             AddKeybinding("Pause", KeyCode.Escape);
-            AddKeybinding("Inventory", KeyCode.I);
+
         }
 
         public void AddKeybinding(string actionName, KeyCode defaultKey)
