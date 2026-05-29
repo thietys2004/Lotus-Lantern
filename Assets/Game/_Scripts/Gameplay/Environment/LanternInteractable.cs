@@ -51,7 +51,8 @@ namespace Game.Gameplay.Environment
                 TurnOn();
                 if (Game.Core.SoulFireManager.Instance != null)
                 {
-                    Game.Core.SoulFireManager.Instance.AddLitLamp(this.gameObject);
+                    // Là environmental lamp, nên được tính vào max limit
+                    Game.Core.SoulFireManager.Instance.AddLitLamp(this.gameObject, isEnvironmental: true);
                 }
             }
             else

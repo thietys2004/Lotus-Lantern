@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f0225da14a81f40973bc4b404b0aa5, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  gridSize: 1
+  turnDelay: 0.1
+  moveTimeout: 0.5
+  pathClearBoxSize: {x: 0.5, y: 0.5}
+  safePathCheckRadius: 0.1
+  respawnColliderDisableDelay: 0.2
+  respawnPositionSetDelay: 0.5
+  lanternSpawnDelay: 0.2
+  lanternActivateDelay: 0.3
+  lanternInteractionCooldown: 0.25
+  interactionDelay: 0.2
+  pickupActivationRadius: 0.3
+  lotusSpawnOffset: {x: 0, y: -0.5, z: 0}
+  lanternGridSnapOffset: 0.5
+  uiUpdateRate: 0.1
+  levelWidth: 13
+  levelHeight: 8
+  maxGenerations: 5000
+  tileEmptyChance: 45
+  tileMiasmaChance: 65
+  tileWallChance: 75
+  tileTableChance: 85
+  tileLampChance: 95
+  maxLampsPerLevel: 3
+  miasmaStepsPerFlower: 3
+  initialFlowerCount: 0

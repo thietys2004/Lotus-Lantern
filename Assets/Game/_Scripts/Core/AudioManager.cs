@@ -1,7 +1,9 @@
 using UnityEngine;
+using Game.Core.Services;
+
 namespace Game.Core
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : MonoBehaviour, IAudioService
     {
         public static AudioManager Instance { get; private set; }
         public AudioSource bgmSource;
@@ -28,6 +30,9 @@ namespace Game.Core
                 bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
                 sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
                 ApplyAudioSettings();
+
+                // Register with ServiceLocator for dependency injection
+                ServiceLocator.Instance.Register<IAudioService>(this);
             }
             else
             {
@@ -48,6 +53,40 @@ namespace Game.Core
             {
                 walkSource.clip = walkClip;
                 walkSource.loop = true;
+            }
+        }
+
+        public void PlaySound(string clipName)
+        {
+            // Generic method to play sound by clip name
+            // This can be extended to use a dictionary of clip names if needed
+            // For now, map common names to specific methods
+            switch (clipName.ToLower())
+            {
+                case "walking":
+                    SetWalkingSound(true);
+                    break;
+                case "stop":
+                    SetWalkingSound(false);
+                    break;
+                case "fire":
+                    PlayFireSound();
+                    break;
+                case "pickup":
+                    PlayPickupSound();
+                    break;
+                case "door":
+                    PlayDoorSound();
+                    break;
+                case "lotus":
+                    PlayLotusSound();
+                    break;
+                case "death":
+                    PlayDeathScream();
+                    break;
+                default:
+                    Debug.LogWarning($"[AudioManager] Unknown sound clip: {clipName}");
+                    break;
             }
         }
 
@@ -75,13 +114,19 @@ namespace Game.Core
 
             if (isWalking)
             {
-
-                if (!walkSource.isPlaying) walkSource.Play();
+                if (!walkSource.isPlaying)
+                {
+                    walkSource.Play();
+                    Debug.Log("AudioManager: WalkSource Started"); // Kiểm tra xem code có chạy vào đây không
+                }
             }
             else
             {
-
-                if (walkSource.isPlaying) walkSource.Pause();
+                if (walkSource.isPlaying)
+                {
+                    walkSource.Stop(); // Dùng Stop để lần sau kêu lại từ đầu clip
+                    Debug.Log("AudioManager: WalkSource Stopped");
+                }
             }
         }
         public void PlayLotusSound()
@@ -130,6 +175,16 @@ namespace Game.Core
             if (bgmSource != null) bgmSource.volume = bgmVolume;
             if (sfxSource != null) sfxSource.volume = sfxVolume;
             if (walkSource != null) walkSource.volume = sfxVolume;
+        }
+
+        public float GetBGMVolume()
+        {
+            return bgmVolume;
+        }
+
+        public float GetSFXVolume()
+        {
+            return sfxVolume;
         }
     }
 }

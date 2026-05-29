@@ -9,9 +9,14 @@ namespace Game.Gameplay.Player
     /// </summary>
     public class PlayerInput : MonoBehaviour, IInputService
     {
-        [SerializeField] private KeyCode placeLanternKey = KeyCode.Space;
-        [SerializeField] private KeyCode interactKey = KeyCode.E;
-        [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
+        private void Start()
+        {
+            // Đảm bảo KeybindingManager được khởi tạo
+            if (Game.Core.KeybindingManager.Instance == null)
+            {
+                Debug.LogWarning("KeybindingManager không được tìm thấy!");
+            }
+        }
 
         public Vector2 GetMovementInput()
         {
@@ -25,9 +30,23 @@ namespace Game.Gameplay.Player
             return new Vector2(x, y);
         }
 
-        public bool GetPlaceLanternInput() => Input.GetKeyDown(placeLanternKey);
-        public bool GetInteractInput() => Input.GetKeyDown(interactKey);
-        public bool GetPauseInput() => Input.GetKeyDown(pauseKey);
+        public bool GetPlaceLanternInput()
+        {
+            KeyCode key = Game.Core.KeybindingManager.Instance.GetKeybinding("Drop Flower");
+            return Input.GetKeyDown(key);
+        }
+
+        public bool GetInteractInput()
+        {
+            KeyCode key = Game.Core.KeybindingManager.Instance.GetKeybinding("Interact");
+            return Input.GetKeyDown(key);
+        }
+
+        public bool GetPauseInput()
+        {
+            KeyCode key = Game.Core.KeybindingManager.Instance.GetKeybinding("Pause");
+            return Input.GetKeyDown(key);
+        }
 
         private void OnEnable()
         {

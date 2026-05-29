@@ -49,7 +49,9 @@ namespace Game.Core.Services
         void UpdateGameplayUI(int stepCount, float playTime);
         void UpdateLanternBar(int currentLamps, int maxLamps);
         void UpdateInventoryUI(int lotusCount, int lighterCount, int keyCount);
-        void ShowEndGamePanel(bool isWin, int stepCount, float playTime);
+        void UpdateLotusCount(int count);
+        void AddStep();
+        void ShowEndGamePanel(bool isWin, int stepCount = 0, float playTime = 0);
         void ShowPausePanel();
         void HidePausePanel();
         void SetLevelDisplayName(string levelName);
@@ -93,5 +95,19 @@ namespace Game.Core.Services
         bool GetPlaceLanternInput();
         bool GetInteractInput();
         bool GetPauseInput();
+    }
+
+    /// <summary>
+    /// Interface for soul fire (lantern) management.
+    /// Manages all lanterns and their state in the level.
+    /// </summary>
+    public interface ISoulFireService
+    {
+        void ClearAllLamps();
+        void RegisterLamp(UnityEngine.GameObject lamp);
+        void UnregisterLamp(UnityEngine.GameObject lamp);
+        int GetActiveLampCount();
+
+        event System.Action OnAllLampsCleared;
     }
 }
